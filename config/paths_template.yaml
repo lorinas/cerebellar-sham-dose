@@ -1,0 +1,53 @@
+cohorts:
+  HC:
+    headmodels_root: /path/to/HC/simnibs_head_models_HC
+  SZ:
+    headmodels_root: /path/to/SZ/simnibs_head_models_SZ
+  CUD:
+    headmodels_root: /path/to/CUD/simnibs_headmodels_sudmex
+step1:
+  simnibs_run_subdir: simnibs_run_2cmBelow_Iz_radius1_geodesic
+  target_distance_below_iz_mm: 20.0
+  roi_radius_mm: 10.0
+  coil_ccd_dir: /path/to/simnibs/resources/coil_models/Drakaki_BrainStim_2022
+outputs:
+  tables_dir: /path/to/cerebellar-sham-dose/results/tables
+  main_figures_dir: /path/to/cerebellar-sham-dose/results/figures/main
+  supplementary_figures_dir: /path/to/cerebellar-sham-dose/results/figures/supplementary
+  logs_dir: /path/to/cerebellar-sham-dose/logs
+waveforms:
+  MagVenture:
+    path: /path/to/magventureCoolB65_waveform_digitized_dt5us.csv
+    active_column: active_abs_norm
+    sham_column: sham_abs_norm
+  Magstim:
+    path: /path/to/magstim70mmAFC_waveform_digitized_dt5us.csv
+    active_column: active_abs_norm
+    sham_column: sham_abs_norm
+step2:
+  tau_list_ms:
+  - 0.06
+  - 0.085
+  - 0.11
+  - 0.25
+  gm_metrics:
+  - mean
+  - p95
+  - p99
+  include_wm_mean: true
+step3:
+  analysis_set: all_sham_tdcs
+  conditions_to_model:
+  - MagVenture_Sham0mm
+  - MagVenture_Sham0mm+electrodes
+  - Magstim_Sham0mm_kernel
+  - tDCS
+  primary_metric: mean
+  primary_tau_ms: 0.085
+  primary_dose_column: C_GM_ROI_mean_V/m_tau0p085ms
+  baseline_drive_Hz: 5.0
+  calibration_fmax_Hz: 70.0
+  gamma_fraction: 0.5
+  gamma_Hz_per_Vm: filled from results/tables/step2b_primary_gamma_choice.csv
+crbl_mf:
+  repo_root: /path/to/CRBL_MF

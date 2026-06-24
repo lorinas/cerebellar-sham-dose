@@ -1,0 +1,4 @@
+subject_id,cohort,include_primary,sex,age
+sub-EXAMPLE001,HC,1,1,30
+sub-EXAMPLE002,SZ,1,2,42
+sub-EXAMPLE003,CUD,1,1,28

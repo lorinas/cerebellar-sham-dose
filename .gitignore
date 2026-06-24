@@ -1,0 +1,46 @@
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Local/private configuration
+config/paths_local.yaml
+config/cohort_metadata.csv
+
+# Logs
+logs/
+*.log
+
+# Generated outputs
+results/
+archive/
+
+# SimNIBS / mesh outputs
+*.msh
+*.geo
+*.opt
+*.mat
+
+# Temporary/test files
+*_TEST*
+*_SPEEDTEST*
+*_PARTEST*
+*_QC_TRACES*
+
+# Patch backups
+*.bak*
+*bak_before*
+
+# External raw source files unless intentionally licensed/approved
+resources/external/*/raw/
+resources/external/*/docs/*.pdf
+
+# Processed external data generated from third-party source files
+resources/external/*/processed/
+
+# Subject lists / private cohort membership
+config/cud_subjects.txt
