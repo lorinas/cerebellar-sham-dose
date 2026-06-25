@@ -46,26 +46,6 @@ Different commercial sham coils have different residual E-field distributions. M
 
 We modeled sham E-field distributions using measured active and sham coil-field maps from Smith and Peterchev. Their dataset provides coil-centered x/y/z measurement points and E-field vector components for active and sham Magstim and MagVenture configurations.
 
-For each coordinate, we converted the measured vector components into E-field magnitude and calculated a local sham/active correction factor:
-
-```text
-local sham/active factor = measured sham |E| / measured active |E|
-```
-
-We then used this factor together with each subject's active E-field simulation to estimate how much of the active field remained during sham stimulation. Each subject's cerebellar GM ROI elements were mapped into coil-centered space, the empirical sham/active factor was interpolated at each element's position, and that factor was multiplied by the subject-specific active E-field magnitude:
-
-```text
-subject-specific sham field
-=
-subject-specific active field
-×
-empirical sham/active correction factor
-```
-
-This preserves both coil-specific sham behavior and individual anatomy.
-
-For the MagVenture sham + electrodes condition, we modeled the magnetic sham field and added the electrode-related contribution following the Smith and Peterchev sham+electrode estimate.
-
 ## Cerebellar virtual model
 
 Circuit-level responses were estimated using the Lorenzi cerebellar mean-field model. This model represents the main cerebellar cortical populations, including granule cells, Golgi cells, molecular-layer interneurons, and Purkinje cells.
