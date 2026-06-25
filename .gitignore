@@ -44,3 +44,9 @@ resources/external/*/processed/
 
 # Subject lists / private cohort membership
 config/cud_subjects.txt
+
+# Local notes / manuscript drafts
+docs/
+
+# Downloaded external documentation files
+resources/external/*/docs/
