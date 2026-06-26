@@ -205,7 +205,7 @@ def command_plan(args: argparse.Namespace) -> list[tuple[str, list[str]]]:
             "build_empirical_kernel",
             [
                 py,
-                "scripts/02c_build_magstim_empirical_kernel.py",
+                "scripts/02c_build_empirical_coil_kernels.py",
                 "--config",
                 config,
             ],

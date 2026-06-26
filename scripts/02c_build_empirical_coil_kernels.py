@@ -24,7 +24,7 @@ from shamdose.magstim_kernel import (
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description=(
-            "Step 2c: build empirical Magstim sham spatial kernel from "
+            "Step 2c: build empirical active/sham coil-field kernels from "
             "Smith-Peterchev measured active/sham E-field grid."
         )
     )
@@ -77,7 +77,7 @@ def main() -> None:
     tables_dir.mkdir(parents=True, exist_ok=True)
     supp_fig_dir.mkdir(parents=True, exist_ok=True)
 
-    print("\n[STEP 2c MAGSTIM EMPIRICAL KERNEL]")
+    print("\n[STEP 2c EMPIRICAL COIL KERNELS]")
     print(f"Input CSV: {Path(args.input_csv).expanduser().resolve()}")
     print(f"Active floor fraction: {args.active_floor_frac}")
 
